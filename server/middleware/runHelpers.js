@@ -15,11 +15,8 @@ module.exports = {
 
   getId: (req, res, next) => {
     if (Object.keys(req.query).length) {
-      // console.log('QUERY: ', req.query);
-      // console.log('USER: ', req.user);
       req.userId = req.query.id;
     }
-    // console.log('USER: ', req.userId);
     next();
   },
 

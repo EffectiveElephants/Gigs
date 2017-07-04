@@ -13,7 +13,7 @@ router.post('/info', util.User.update, (req, res) => {
 });
 
 router.post('/signup', util.User.update, (req, res) => {
-  res.send('Updates successfully');
+  res.send('Updated successfully');
 });
 
 router.post('/like', util.User.like, (req, res) => {

@@ -93,7 +93,7 @@ class App extends React.Component {
   //fix to send all user data
   updateUserInfo(userObj) {
     console.log('updated user data', userObj);
-    axios.post('/user/info', data)
+    axios.post('/user/info', _.extend(this.state.user, userObj))
       .then(res => {
         console.log(res);
       })
@@ -136,7 +136,7 @@ class App extends React.Component {
     var obj = Object.assign({}, this.state.user);
     _.extend(obj, data);
     console.log('signup user data', obj);
-    axios.post('/user/signup', {obj})
+    axios.post('/user/signup', obj)
       .then(res => {
         console.log(res);
         this.getUserInfo();
